@@ -1,12 +1,13 @@
+# https://github.com/Shmoney81/lab11-SH-AL.git
+# Partner 1: Stephen Horvat
+# Partner 2: Aiden Lehrhaupt
+
 import math
 
 def square_root(a):
-    try:
-        if a < 0:
-            raise ValueError
-        return math.sqrt(a)
-    except ValueError:
-        print("Invalid input")
+    if a < 0:
+        raise ValueError
+    return math.sqrt(a)
 def hypotenuse(a, b):
     return math.hypot(a, b)
 def add(a, b):

@@ -1,3 +1,7 @@
+# https://github.com/Shmoney81/lab11-SH-AL.git
+# Partner 1: Stephen Horvat
+# Partner 2: Aiden Lehrhaupt
+
 import unittest
 from calculator import *
 
@@ -40,24 +44,28 @@ class TestCalculator(unittest.TestCase):
     def test_log_invalid_base(self): # 1 assertion
         with self.assertRaises(ValueError):
             log(0, 5)
+        with self.assertRaises(ValueError):
+            log(1, 5)
+        with self.assertRaises(ValueError):
+            log(-5, 5)
     
     ######## Partner 1
     def test_log_invalid_argument(self): # 1 assertion
         with self.assertRaises(ValueError):
             log(8, 0)
-            log(0, 0)
-            log(4, -2)
+        with self.assertRaises(ValueError):
+            log(4, -4)
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
+    def test_hypotenuse(self): # 3 assertions
+        self.assertEqual(hypotenuse(3, 4), 5)
+        self.assertEqual(hypotenuse(0, 5), 5)
+        self.assertEqual(hypotenuse(-3, -4), 5)
 
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
-    ##########################
+    def test_sqrt(self): # 3 assertions
+        self.assertEqual(square_root(25), 5)
+        self.assertEqual(square_root(9), 3)
+        with self.assertRaises(ValueError):
+            square_root(-1)
 
 # Do not touch this
 if __name__ == "__main__":
